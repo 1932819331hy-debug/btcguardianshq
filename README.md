@@ -3,7 +3,7 @@
 Preserving one of the last surviving full-archive Bitcoin nodes from 2009 (original Berkeley DB 4.8.30 wallet, birthtime 1, never restored). Continuous lineage for over 17 years, self-funded.
 
 **Special thanks to the mempool.space team** — this project is proudly forked from their incredible open-source explorer. Mempool.space is the gold standard for Bitcoin visualization, and their work made this local glow possible. Huge praise and gratitude!
-
+![Image](https://github.com/user-attachments/assets/2f00a1e6-4164-4802-a22a-7c6975b504db)
 ## Features (In Development)
 - **Genesis Node**: Full archive since 2009, Tor-routed, outbound-only for privacy.
 - **Local-Only Mempool Explorer**: Live visualization powered directly by the genesis node (no external APIs).
