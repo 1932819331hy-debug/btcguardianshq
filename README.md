@@ -30,7 +30,7 @@ BTC: 1CqtHmQ8wxfFps9kessQwkb5q6qWKaUZ5C
 
 The guardian builds in silence — history protected until ready.
 
-MIT License © 2026 Marc Ashworth (BtcGuardiansHQ)
+MIT License © 2026  Ashworth78 (BtcGuardiansHQ)
 Contact:btcguardianshq@proton.me
 X: @satoshis_mate
 GitHub Discussions
