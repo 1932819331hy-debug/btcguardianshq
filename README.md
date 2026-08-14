@@ -64,4 +64,4 @@ MIT
 This project is currently self-funded.  
 Donations welcome:
 
-`1CqtHmQ8wxFps9kessQwkbs5q6qWKaUZ5C`
+`1sXyCoMdHmPi2axsmXqLeNSkRi7RXkfPQ`
