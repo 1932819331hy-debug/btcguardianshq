@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "bip39": "^3.1.0",
+    "crypto-js": "^4.2.0",
+    "secrets.js-grempe": "^2.0.0",
+    "sqlite3": "^6.0.1"
+  }
+}

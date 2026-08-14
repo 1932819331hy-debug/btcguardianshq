@@ -1,0 +1,25 @@
+# === CRITICAL - Never push these ===
+private/
+*.env
+.env.*
+**/data/
+**/mysql/
+
+# Passwords / secrets
+*password*
+*secret*
+*.key
+*.pem
+*.seed
+
+# Large / temporary files
+*.tar
+*.tar.gz
+backend.tar
+frontend.tar
+mariadb.tar
+node_modules/
+.DS_Store
+.vscode/
+.idea/
+docs/node-configs/rpc-credentials*
