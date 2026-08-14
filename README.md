@@ -1,76 +1,67 @@
-# BtcGuardiansHQ (Private Development)
+# BTCGuardiansHQ
 
-**Preserving one of the last surviving full-archive Bitcoin nodes from 2009** (original Berkeley DB 4.8.30 wallet, birthtime 1, never restored). Continuous lineage for over 17 years, self-funded.
+**Sovereign Bitcoin Inheritance Tools**
 
----
+Free, open-source, non-custodial tools for securing and inheriting Bitcoin without relying on third parties, banks, or KYC services.
 
-## About the Project
+Built for people who want full control of their keys — today and for the next generation.
 
-BTCGuardiansHQ is building **free, open-source, non-custodial tools** for Bitcoin inheritance and long-term sovereignty.
+## The Gap It Fills
 
-The goal is to allow individuals to securely pass their Bitcoin to future generations without relying on custodians, banks, or third parties.
+Most Bitcoin inheritance solutions either:
+- Stay too simple (one seed in a drawer), or
+- Outsource trust to custodial/collaborative services
 
----
+BTCGuardiansHQ takes the harder path: proper cryptography, air-gapped operations, physical metal backups, Tor privacy, and full integration with your own node.
 
-### Why the 2009 Node Matters
+## Core Features
 
-This project is powered by a genuine Bitcoin node running continuously since 2009. It provides an independent, archival source of blockchain data.
+- True Shamir’s Secret Sharing (2-of-2, expandable to 3-of-3 / 3-of-5 / 5-of-5)
+- Offline seed generation + splitting inside Tails OS (networking disabled)
+- Strong encryption (AES-256-GCM + PBKDF2, Argon2id upgrade planned)
+- Multisig + timelock address generation
+- Encrypted full-seed backup as safety net
+- Watch-only integration with your own Bitcoin node + Mempool explorer
+- PSBT workflow for funding and spending from cold storage
 
-- Full archival history (never pruned)
-- Independent block validation
-- Reduces trust in external explorers or APIs
+## Philosophy
 
-**Special thanks** to the [mempool.space](https://mempool.space) team — this project is proudly forked from their incredible open-source explorer.
+We don’t ask for trust. We ask you to verify.
 
----
+- Private keys never touch the internet
+- Vault creation stays completely air-gapped
+- Monitoring is watch-only (xpub / public addresses only)
+- Designed with strict operational security in mind
 
-## Key Features (In Development)
+## Status
 
-- **Genesis Node**: Full archive since 2009, Tor-routed, outbound-only for privacy.
-- **Local-Only Mempool Explorer**: Live visualization powered directly by the genesis node (no external APIs).
-- **Non-Custodial Vault Tools**: Air-gapped signing and inheritance planning using Shamir’s Secret Sharing (`vault.js` prototype tested).
+Core infrastructure is functional:
+- Archival Bitcoin node running
+- Self-hosted Mempool explorer
+- Encrypted Shamir vault tool working offline
 
-All tools are **privacy-first** and fully open-source.
+Still in active hardening phase.
 
----
+## Getting Started
 
-## Current Status (July 2026)
+1. Review the `vault/` directory
+2. Read the documentation carefully
+3. Run vault operations only in a clean Tails environment with networking disabled
 
-- Node fully synced and healthy (931k+ blocks)
-- Local Mempool Explorer functional via Podman
-- `vault.js` – Working Shamir’s Secret Sharing prototype
-- Development continues under strict OPSEC in Tails OS
-- Repository currently private during security and review phase
+## Security
 
----
+This project involves high-value cryptographic material.  
+Always generate and split seeds air-gapped. Verify everything yourself.
 
-## Proof of Genesis (Internal)
+See [SECURITY.md](SECURITY.md) for vulnerability reporting.
 
-- Wallet birthtime: 1 (pre-timestamp era)
-- Early shards received from 2011–2012 (poker era)
-- Block 1 stats verified with Satoshi’s message
-- Screenshots and detailed proof available in private issues
+## License
 
----
+MIT
 
-## Donations (To Sustain the Node)
+## Support
 
-**BTC:** `1CqtHmQ8wxfFps9kessQwkb5q6qWKaUZ5C`
+This project is currently self-funded.  
+Donations welcome:
 
-Every contribution helps keep the 2009 node running and supports continued development.
-
----
-
-## Contact
-
-- Email: btcguardianshq@proton.me
-- X: [@satoshis_mate](https://x.com/satoshis_mate)
-
----
-
-> *The guardian builds in silence — history protected until ready.*
-
----
-
-**License**  
-MIT License © 2026 Ashworth78 (BtcGuardiansHQ)
+`1CqtHmQ8wxFps9kessQwkbs5q6qWKaUZ5C`
