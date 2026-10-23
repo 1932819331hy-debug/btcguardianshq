@@ -1,59 +1,71 @@
 # BTCGuardiansHQ
 
-**Sovereign Bitcoin Inheritance Tools**
+**Self-hosted Bitcoin verification, plus a non-custodial inheritance prototype**
 
-Free, open-source, non-custodial tools for securing and inheriting Bitcoin without relying on third parties, banks, or KYC services.
+> **PROTOTYPE STAGE. NOT AUDITED.**
+> `vault.js` has not been independently reviewed and is not production-ready. Do not trust real funds to it until it has been reviewed or audited. Use throwaway test data first.
 
-Built for people who want full control of their keys — today and for the next generation.
+Free, open-source, non-custodial tools for people who want to verify Bitcoin on their own hardware and plan for passing it on, without custodians, banks, or KYC services.
 
-## The Gap It Fills
+BTCGuardiansHQ is not a hosted wallet, not a custodian, and has no token.
 
-Most Bitcoin inheritance solutions either:
+## What it is
+
+- **A self-hosted verification stack:** your own archival Bitcoin Core node and your own Mempool explorer, run on your own hardware and network.
+- **An inheritance prototype (`vault/vault.js`):** a command-line tool for air-gapped use (for example Tails with networking disabled) that splits secret material into encrypted Shamir shares.
+
+## The gap it aims to fill
+
+Most Bitcoin inheritance setups either:
 - Stay too simple (one seed in a drawer), or
-- Outsource trust to custodial/collaborative services
+- Hand trust to a custodial or collaborative service
 
-BTCGuardiansHQ takes the harder path: proper cryptography, air-gapped operations, physical metal backups, Tor privacy, and full integration with your own node.
+BTCGuardiansHQ explores a harder path: sound cryptography, air-gapped operations, physical backups, and verification against your own node.
 
-## Core Features
+## Features (prototype)
 
-- True Shamir’s Secret Sharing (2-of-2, expandable to 3-of-3 / 3-of-5 / 5-of-5)
-- Offline seed generation + splitting inside Tails OS (networking disabled)
-- Strong encryption (AES-256-GCM + PBKDF2, Argon2id upgrade planned)
-- Multisig + timelock address generation
-- Encrypted full-seed backup as safety net
-- Watch-only integration with your own Bitcoin node + Mempool explorer
-- PSBT workflow for funding and spending from cold storage
+- Shamir's Secret Sharing with configurable thresholds (for example 3-of-5)
+- Offline use inside Tails OS with networking disabled
+- AES-256-GCM encryption with PBKDF2 key derivation (Argon2id upgrade planned)
+- Watch-only monitoring against your own node and explorer (public addresses only)
+
+Some features described in earlier notes (multisig and timelock generation, PSBT workflow) are being checked against the current code and may not be complete. Check the code and docs before relying on them.
 
 ## Philosophy
 
-We don’t ask for trust. We ask you to verify.
+We don't ask for trust. We ask you to verify.
 
 - Private keys never touch the internet
-- Vault creation stays completely air-gapped
-- Monitoring is watch-only (xpub / public addresses only)
-- Designed with strict operational security in mind
+- Vault creation stays air-gapped
+- Monitoring is watch-only (public addresses only)
+- Strict operational security by design
 
 ## Status
 
-Core infrastructure is functional:
-- Archival Bitcoin node running
-- Self-hosted Mempool explorer
-- Encrypted Shamir vault tool working offline
+Working today, in my own setup:
+- Archival Bitcoin Core node
+- Self-hosted Mempool explorer (local network only for now)
+- Encrypted Shamir vault tool, used offline
 
-Still in active hardening phase.
+Not done yet:
+- Independent review or audit
+- Address history in the explorer (needs Electrs or Fulcrum)
+- A public explorer
 
-## Getting Started
+Still in an active hardening phase.
 
-1. Review the `vault/` directory
-2. Read the documentation carefully
-3. Run vault operations only in a clean Tails environment with networking disabled
+## Getting started
+
+1. Review the `vault/` directory and the docs.
+2. Test with throwaway data only.
+3. Run real vault operations only in a clean Tails session with networking disabled.
+4. Store each share in a separate physical location. Never commit shares to git.
 
 ## Security
 
-This project involves high-value cryptographic material.  
-Always generate and split seeds air-gapped. Verify everything yourself.
+This project handles high-value cryptographic material. Always generate and split seeds air-gapped, and verify everything yourself.
 
-See [SECURITY.md](SECURITY.md) for vulnerability reporting.
+See [SECURITY.md](SECURITY.md) for vulnerability reporting and the disclaimer.
 
 ## License
 
@@ -61,7 +73,6 @@ MIT
 
 ## Support
 
-This project is currently self-funded.  
-Donations welcome:
+Solo and self-funded. Donations welcome:
 
 `1sXyCoMdHmPi2axsmXqLeNSkRi7RXkfPQ`
