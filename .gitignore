@@ -5,6 +5,9 @@ private/
 **/data/
 **/mysql/
 
+# Vault shares - never commit
+share-*.json
+
 # Passwords / secrets
 *password*
 *secret*
