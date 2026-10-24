@@ -45,7 +45,11 @@ You should get an acknowledgement when the mailbox is checked. Fix timing depend
 - Prefer email before public GitHub issues for anything that could burn keys or mislead users about verification.
 - For docs-only mistakes (overclaiming explorer features, tone/marketing errors), a normal issue is fine.
 - Public proofs of node health belong in the repo's existing proof issues, never by publishing RPC access.
+ 
+## Known limitations
 
+- vault.js currently contains a hardcoded test password for development. Never use it to protect a real vault. A runtime password prompt is planned.
+- The vault password KDF is PBKDF2. A move to Argon2id is planned, with old vaults kept readable.
 ## Operator note
 
 If you are running the stack:
