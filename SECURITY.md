@@ -49,7 +49,7 @@ You should get an acknowledgement when the mailbox is checked. Fix timing depend
 ## Known limitations
 
 - vault.js currently contains a hardcoded test password for development. Never use it to protect a real vault. A runtime password prompt is planned.
-- The vault password KDF is PBKDF2. A move to Argon2id is planned, with old vaults kept readable.
+- New vaults use Argon2id (argon2 0.44.0). Older scrypt vaults stay readable with `--legacy`. The code is an unaudited prototype.
 ## Operator note
 
 If you are running the stack:
