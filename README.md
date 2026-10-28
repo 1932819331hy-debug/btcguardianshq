@@ -26,10 +26,10 @@ BTCGuardiansHQ explores a harder path: sound cryptography, air-gapped operations
 
 - Shamir's Secret Sharing with configurable thresholds (for example 3-of-5)
 - Offline use inside Tails OS with networking disabled
-- AES-256-GCM encryption with Argon2id key derivation for new vaults (legacy scrpt open with '--legacy)'. The code is an unaudited prototype
+- AES-256-GCM encryption with Argon2id key derivation ...for new vaults (legacy scrypt vaults open with `--legacy`). The code is an unaudited prototype
 - Watch-only monitoring against your own node and explorer (public addresses only)
 
-Some features described in earlier notes (multisig and timelock generation, PSBT workflow) are being checked against the current code and may not be complete. Check the code and docs before relying on them.
+Multisig, timelock and PSBT features are not built yet. Miniscript inheritance is being tested on testnet only.
 
 ## Philosophy
 
