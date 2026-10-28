@@ -3,25 +3,24 @@
 ## Core Rules
 
 - Generate and split all seeds in Tails OS with networking disabled
-- Never reuse an air-gapped machine for online tasks
-- Store shares on metal in different geographic locations
-- Keep at least one encrypted full-seed backup
-- Use strong, unique passwords (Argon2id upgrade planned)
+- Never reuse an air-gapped session for online tasks
+- Store shares in different locations; never keep 3 or more together
+- Never commit shares, seeds, passphrases or `bitcoin.conf` secrets to git
+- Use a strong, unique passphrase (vault.js derives the key with Argon2id)
 
 ## Recommended Practices
 
 - Verify every step yourself
-- Test recovery before putting real funds at risk
-- Prefer Tor for any node / explorer traffic
-- Keep Bitcoin Core and Mempool updated
-- Document your inheritance instructions clearly for heirs
+- Test create and recovery with fake data before using real funds
+- Keep Bitcoin Core, Mempool and Tails updated
+- Write clear recovery instructions for heirs
 
 ## Threat Model Highlights
 
 - Physical theft
 - Coercion
 - Device compromise
-- Loss of shares
+- Loss of shares or passphrase
 - Natural disaster
 
-Mitigations are built around air-gapping, threshold schemes, and geographic distribution.
+Mitigations rely on air-gapping, a 3-of-5 threshold, and storing shares in separate places.
