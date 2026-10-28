@@ -1,34 +1,27 @@
-# Architecture
-
-BTCGuardiansHQ is designed around strict separation of concerns:
-
-## Components
-
 1. **Vault Tool (`vault/`)**
-   - Offline seed generation
-   - True Shamir’s Secret Sharing
-   - AES-256-GCM encryption
-   - Multisig + timelock address creation
-   - Runs only in air-gapped Tails OS
+   - Offline seed generation (24-word BIP39)
+   - Passphrase key derivation: Argon2id for new vaults, scrypt for legacy vaults (`--legacy`)
+   - AES-256-GCM encryption
+   - 3-of-5 Shamir's Secret Sharing
+   - Miniscript inheritance policy: printed example only, testnet/signet only
+   - Runs offline in Tails OS with networking disabled
 
 2. **Bitcoin Node**
-   - Full archival node
-   - Tor-only networking preferred
-   - Provides watch-only monitoring via RPC
+   - Self-hosted archival Bitcoin Core node with txindex
+   - Feeds the local explorer over RPC
 
 3. **Explorer**
-   - Self-hosted Mempool instance
-   - Connected to the local node
-   - Watch-only (xpub / public addresses only)
+   - Self-hosted Mempool instance on the local network only (not public)
+   - Connected to the local node
+   - Blocks and transactions work today; address history needs Fulcrum (in progress)
 
 4. **Physical Layer**
-   - Metal seed plates
-   - Geographically separated storage
-   - Encrypted full-seed backup as safety net
+   - Shares stored separately (paper or metal) in different locations
+   - Never keep the threshold of shares together
 
 ## Security Model
 
-- Private keys never touch the internet
-- Vault creation is fully air-gapped
-- Monitoring is strictly watch-only
-- Recovery requires threshold of shares + password
+- Private keys and seeds are only handled offline
+- Vault creation and recovery are done air-gapped in Tails
+- The explorer and node never need the seed
+- Recovery requires 3 of 5 shares plus the passphrase
