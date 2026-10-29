@@ -13,7 +13,7 @@ So "funding the vault" means: send bitcoin to an address that belongs to the see
 **Sue (the owner) sets it up**
 
 1. Boot Tails and keep it offline.
-2. Run vault.js `create`. It makes a new 24-word seed, encrypts it with your passphrase, and splits it into 5 shares (any 3 recover it).
+2. Run vault.js `node vault.js create --show`. It makes a new 24-word seed, encrypts it with your passphrase, and splits it into 5 shares (any 3 recover it).
 3. Before you wipe anything, open **Sparrow Wallet** (it comes with Tails), choose *New Wallet*, then *Import* with those 24 words.
    - Write down the wallet's **xpub** (the public key that lets you see the wallet) and copy the first **receive address** onto paper or a USB stick.
    - The xpub and addresses are safe to copy. The 24 words are not.
@@ -29,7 +29,7 @@ So "funding the vault" means: send bitcoin to an address that belongs to the see
 
 **Bob (the heir) recovers**
 
-10. Bob boots Tails offline, gathers 3 of the 5 shares and the passphrase, and runs vault.js `reconstruct`. It gives back the 24 words.
+10. Bob boots Tails offline, gathers 3 of the 5 shares and the passphrase, and runs vault.js `node vault.js reconstruct --show share1 share2 share3`. It gives back the 24 words.
 11. Bob imports the 24 words into Sparrow on Tails, connects to the internet, and sends the coins to his own wallet.
 12. Bob then treats the old seed as used and never relies on it again.
 
